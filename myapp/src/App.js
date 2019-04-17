@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Gods from "./Gods";
+import AddGod from "./AddGod";
 
 class App extends Component {
   state = {
@@ -15,6 +16,7 @@ class App extends Component {
         <h1>React-Redux Playground</h1>
         <p>Watch me work</p>
         <Gods gods={this.state.gods} />
+        <AddGod />
       </div>
     );
   }
