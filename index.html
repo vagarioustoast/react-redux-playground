@@ -20,11 +20,17 @@
 
     <script type="text/babel">
       class App extends React.Component {
+        state = {
+          name: "David",
+          age: 23
+        };
         render() {
           return (
             <div className="app-content">
               <h1>React-Redux Playground</h1>
-              <p>{Math.floor(Math.random() * 100)}</p>
+              <p>
+                My name is {this.state.name} and I am {this.state.age}.
+              </p>
             </div>
           );
         }
