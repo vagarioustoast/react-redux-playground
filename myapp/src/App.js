@@ -10,13 +10,22 @@ class App extends Component {
       { name: "Ares", age: 998, id: 3 }
     ]
   };
+
+  addGod = newGod => {
+    // Assigns random id number
+    newGod.id = Math.floor(Math.random() * 100);
+    let gods = [...this.state.gods, newGod];
+    this.setState({
+      gods: gods
+    });
+  };
   render() {
     return (
       <div className="App">
         <h1>React-Redux Playground</h1>
         <p>Watch me work</p>
         <Gods gods={this.state.gods} />
-        <AddGod />
+        <AddGod addGod={this.addGod} />
       </div>
     );
   }

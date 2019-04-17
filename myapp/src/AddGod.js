@@ -15,7 +15,7 @@ export default class AddGod extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.addGod(this.state);
   };
   render() {
     return (
@@ -27,6 +27,7 @@ export default class AddGod extends Component {
           <input type="text" name="age" onChange={this.handleChange} />
           <label>Belt</label>
           <input type="text" name="belt" onChange={this.handleChange} />
+          <button>Submit</button>
         </form>
       </div>
     );
