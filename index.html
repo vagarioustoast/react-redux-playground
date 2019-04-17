@@ -24,6 +24,18 @@
           name: "David",
           age: 23
         };
+
+        handleClick = e => {
+          console.log(e.target);
+        };
+
+        handleMouseOver = e => {
+          console.log(e, e.pageY);
+        };
+
+        handleCopy = e => {
+          console.log("Not today");
+        };
         render() {
           return (
             <div className="app-content">
@@ -31,6 +43,9 @@
               <p>
                 My name is {this.state.name} and I am {this.state.age}.
               </p>
+              <button onClick={this.handleClick}>Click here</button>
+              <button onMouseOver={this.handleMouseOver}>Hover</button>
+              <p onCopy={this.handleCopy}>What we think, we become</p>
             </div>
           );
         }
