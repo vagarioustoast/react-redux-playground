@@ -1,3 +1,3 @@
 # Playground
 
-### Simple workspace to try things out in React/Redux.
+### Simple workspace to practice techniques in React/Redux.
