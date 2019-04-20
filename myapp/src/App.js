@@ -1,40 +1,28 @@
 import React, { Component } from "react";
-import Gods from "./Gods";
-import AddGod from "./AddGod";
+import Todos from "./Todos";
 
 class App extends Component {
   state = {
-    gods: [
-      { name: "Zeus", age: 1000, id: 1 },
-      { name: "Athena", age: 999, id: 2 },
-      { name: "Ares", age: 998, id: 3 }
+    todos: [
+      { id: 1, content: "Buy some water" },
+      { id: 2, content: "Play some Wargame" }
     ]
   };
 
-  addGod = newGod => {
-    // Assigns random id number
-    newGod.id = Math.floor(Math.random() * 100);
-    let gods = [...this.state.gods, newGod];
-    this.setState({
-      gods: gods
-    });
-  };
-
-  deleteGod = id => {
-    let gods = this.state.gods.filter(god => {
-      return god.id !== id;
+  // Delete Todo: Function needs to be in "App" because it interacts with this state
+  deleteTodo = id => {
+    const todos = this.state.todos.filter(todo => {
+      return todo.id !== id;
     });
     this.setState({
-      gods: gods
+      todos
     });
   };
   render() {
     return (
-      <div className="App">
-        <h1>React-Redux Playground</h1>
-        <p>Watch me work</p>
-        <Gods deleteGod={this.deleteGod} gods={this.state.gods} />
-        <AddGod addGod={this.addGod} />
+      <div className="App container">
+        <h1 className="center blue-text">Todos</h1>
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     );
   }
