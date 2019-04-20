@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Todos from "./Todos";
+import AddForm from "./AddForm";
 
 class App extends Component {
   state = {
@@ -18,11 +19,20 @@ class App extends Component {
       todos
     });
   };
+
+  addTodo = newTodo => {
+    newTodo.id = Math.floor(Math.random() * 1000);
+    let todos = [...this.state.todos, newTodo];
+    this.setState({
+      todos
+    });
+  };
   render() {
     return (
       <div className="App container">
         <h1 className="center blue-text">Todos</h1>
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+        <AddForm addTodo={this.addTodo} />
       </div>
     );
   }
