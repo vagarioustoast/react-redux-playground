@@ -2,7 +2,7 @@ import React from "react";
 
 const Gods = ({ gods }) => {
   const myGods = gods.map(god => {
-    if (god.age > 998)
+    if (god.age > 0)
       return (
         <div className="gods" key={god.id}>
           <div>Name: {god.name}</div>
