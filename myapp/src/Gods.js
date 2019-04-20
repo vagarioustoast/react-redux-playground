@@ -1,6 +1,6 @@
 import React from "react";
 
-const Gods = ({ gods }) => {
+const Gods = ({ gods, deleteGod }) => {
   const myGods = gods.map(god => {
     if (god.age > 0)
       return (
@@ -8,6 +8,13 @@ const Gods = ({ gods }) => {
           <div>Name: {god.name}</div>
           <div>Age: {god.age}</div>
           <div>Belt: {god.b}</div>
+          <button
+            onClick={() => {
+              deleteGod(god.id);
+            }}
+          >
+            Delete god
+          </button>
         </div>
       );
     else {

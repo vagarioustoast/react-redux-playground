@@ -19,12 +19,21 @@ class App extends Component {
       gods: gods
     });
   };
+
+  deleteGod = id => {
+    let gods = this.state.gods.filter(god => {
+      return god.id !== id;
+    });
+    this.setState({
+      gods: gods
+    });
+  };
   render() {
     return (
       <div className="App">
         <h1>React-Redux Playground</h1>
         <p>Watch me work</p>
-        <Gods gods={this.state.gods} />
+        <Gods deleteGod={this.deleteGod} gods={this.state.gods} />
         <AddGod addGod={this.addGod} />
       </div>
     );
