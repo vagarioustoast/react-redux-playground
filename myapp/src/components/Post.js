@@ -20,7 +20,9 @@ export default class Post extends Component {
         <p>{this.state.post.body}</p>
       </div>
     ) : (
-      <div className="center blue">Loading..</div>
+      <div className="center">
+        <h2 className="green-text">Loading..</h2>
+      </div>
     );
     return <div className="container">{post}</div>;
   }
